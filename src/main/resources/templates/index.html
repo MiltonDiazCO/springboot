@@ -12,6 +12,21 @@
 	<p th:text="${parrafo2}"></p>
 	<p th:text="${parrafo3}"></p>
 	<p th:text="${parrafo4}"></p>
+	
+	<hr/>
+
+	<table>
+		<thead>
+			<tr>
+				<th>País</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="pais:${paises}">
+				<td th:text="${pais}"></td>
+			</tr>
+		</tbody>
+	</table>
 
 </body>
 </html>
