@@ -8,7 +8,8 @@
 
 	<h1>Usuarios</h1>
 	
-	<span th:text="${usuario.nombre}"></span>
+	<span th:if="${usuario.correo == null}">El usuario no tiene un correo asignado</span>
+	<span th:if="${usuario.correo != null}" th:text="${usuario.correo}"></span>
 
 </body>
 </html>
