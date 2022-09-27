@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>Hola Spring</title>
+<title th:text="${titulo}"></title>
 </head>
 <body>
 
-	<h1>Hola Spring</h1>
+	<h1>Pasando datos a la vista</h1>
+
+	<p th:text="${parrafo1}"></p>
+	<p th:text="${parrafo2}"></p>
+	<p th:text="${parrafo3}"></p>
+	<p th:text="${parrafo4}"></p>
 
 </body>
 </html>
