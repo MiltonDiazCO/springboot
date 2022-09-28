@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,26 +17,33 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/app")
 public class IndexController {
 
+	@Value("${texto.indexController.index.subtitulo}")
+	private String textSubtitulo;
+
 	@GetMapping({ "", "/", "/index" })
 	public String index(Model model) {
+		model.addAttribute("subtitulo", textSubtitulo);
 		model.addAttribute("parrafo1", "Hola, soy el parrafo No. 1");
 		return "index";
 	}
 
 	@GetMapping({ "/index2" })
 	public String indexTwo(ModelMap model) {
+		model.addAttribute("subtitulo", textSubtitulo);
 		model.addAttribute("parrafo2", "Hola, soy el parrafo No. 2");
 		return "index";
 	}
 
 	@GetMapping({ "/index3" })
 	public String indexThree(Map<String, Object> map) {
+		map.put("subtitulo", textSubtitulo);
 		map.put("parrafo3", "Hola, soy el parrafo No. 3");
 		return "index";
 	}
 
 	@GetMapping({ "/index4" })
 	public ModelAndView indexFour(ModelAndView mv) {
+		mv.addObject("subtitulo", textSubtitulo);
 		mv.addObject("parrafo3", "Hola, soy el parrafo No. 4");
 		mv.setViewName("index");
 		return mv;
