@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/app")
 public class IndexController {
 
-	@GetMapping({ "/", "", "/index" })
+	@GetMapping({ "", "/", "/index" })
 	public String index(Model model) {
 		model.addAttribute("parrafo1", "Hola, soy el parrafo No. 1");
 		return "index";

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Envio de parametros</title>
+</head>
+<body>
+	
+	<a th:href="@{/params/(nombre=Juan)}">/params?nombre=Juan</a><br>
+	<a th:href=@{/params/(nombre=Jorge)}>/params?nombre=Jorge</a>
+	
+	<br><br>
+	
+	<span th:text="${datos1}"></span>
+	
+	<br><br>
+	
+	<hr>
+	
+	<a th:href="@{/params/mix-params/(nombre=Juan,edad=10)}">/params/mix-params/?nombre=Juan&edad=10</a>
+	<br>
+	<a th:href="@{/params/mix-params/(nombre=Jorge,edad=8)}">/params/mix-params/?nombre=Jorge&edad=8</a>
+	
+	<br><br>
+	
+	<span th:text="${datos2}"></span>
+
+</body>
+</html>

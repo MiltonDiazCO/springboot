@@ -12,15 +12,15 @@ import com.milton.spring.basico.models.Usuario;
 @Controller
 @RequestMapping("/usuarios")
 public class UsuariosController {
-	
-	@GetMapping({"", "/"})
+
+	@GetMapping({ "", "/" })
 	public String listUsuarios(Model model) {
 		ArrayList<Usuario> user = new ArrayList<Usuario>();
 		user.add(new Usuario("Simon", "Bolivar", "simonbolivar@gmail.com"));
 		user.add(new Usuario("Barack", "Obama", "obama@gmail.com"));
-		
+
 		model.addAttribute("usuarios", user);
-		
+
 		return "usuarios";
 	}
 

@@ -11,9 +11,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ParamsController {
 
 	@GetMapping({ "", "/", "minombre" })
-	public String miNombre(@RequestParam(required=false, defaultValue="NN") String nombre, Model model) {
-		model.addAttribute("nombre", ("Hola " + nombre));
-		return "params/nombres";
+	public String datosPersona(@RequestParam(required = false, defaultValue = "NN") String nombre, Model model) {
+		model.addAttribute("datos1", ("Hola " + nombre));
+		return "params";
+	}
+
+	@GetMapping({ "/mix-params" })
+	public String datosPersona(@RequestParam String nombre, @RequestParam int edad, Model model) {
+		model.addAttribute("datos2", ("Nombre: " + nombre + ", Edad: " + edad));
+		return "params";
 	}
 
 }
