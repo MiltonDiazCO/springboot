@@ -6,6 +6,11 @@
 </head>
 <body>
 	
+	<p>Importante: fijate en la URL</p>
+	
+	<h1>@RequestParam</h1>
+	
+	
 	<a th:href="@{/params/(nombre=Juan)}">/params?nombre=Juan</a><br>
 	<a th:href=@{/params/(nombre=Jorge)}>/params?nombre=Jorge</a>
 	
@@ -24,6 +29,30 @@
 	<br><br>
 	
 	<span th:text="${datos2}"></span>
+	
+	<br><br>
+	
+	<hr>
+	
+	<h2>@PathVariable</h2>
+	
+	<a th:href="@{/params/variables/Juan}">/params/variables/Juan</a><br>
+	<a th:href="@{/params/variables/Jorge}">/params/variables/Jorge</a>
+	
+	<br><br>
+	
+	<span th:text="${datos3}"></span>
+	
+	<br><br>
+	
+	<hr>
+	
+	<a th:href="@{/params/mix-variables/Juan/10}">/params/variables/Juan/10</a><br>
+	<a th:href="@{/params/mix-variables/Jorge/8}">/params/variables/Jorge/8)</a>
+	
+	<br><br>
+	
+	<span th:text="${datos4}"></span>
 
 </body>
 </html>
